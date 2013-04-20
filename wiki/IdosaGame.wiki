@@ -33,6 +33,10 @@ A implementação foi elaborada seguindo os seguintes passos:
 || 13) ||Se alguem ganhou, anuncia o ganhador e termina o jogo.||
 
 
+- Tabuleiro 
+<img src="https://bsimips.googlecode.com/svn/trunk/idosaGame/imagens/tabuleiro.png">
+
+
 = Considerações para simulação do código =
 
 O código abaixo fornecido foi desenvolvido para o microprocessador MIPS por meio do simulador MARS. Para simulá-lo será necessário abrir o BitmapDisplay, configurá-lo em 64x64, e conectá-lo ao MARS.
