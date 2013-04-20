@@ -20,12 +20,12 @@ A implementação foi elaborada seguindo os seguintes passos:
 || Passos ||
 || 1) || Inicialização as diversas constantes (Endereçamento para o BitmapDisplay, Mensagens de texto, cores)||
 || 2) || Inicialização das variáveis (todas armazenadas em registradores)||
-|| 3) ||Desenha o tabuleiro||
-|| 4) ||Desenha o menu de opções||
+|| 3) ||Desenha o tabuleiro no BitmapDisplay||
+|| 4) ||Imprime o menu de opções||
 || 5) ||Recebe uma tecla||
 || 6) ||Avaliando a paridade do contador de jogadas determina se é a vez do X(ímpar) ou O (par)||
-|| 7) ||Verifica se posicao ja ocupada se sim (volta ao passo 4) ||
-|| 8) ||Se posicao desocupada desenha o X, ou o O na posicao escolhida||
+|| 7) ||Verifica se posição teclada já ocupada se sim (volta ao passo 4) ||
+|| 8) ||Se posição desocupada desenha o X, ou o O na posição escolhida||
 || 9) ||Incrementa o contador||
 || 10) ||Se o contador for maior que 4, verifica se alguém ganhou (passo 12)||
 || 11) ||Se contador for maior que 9, termina o jogo.||
@@ -33,6 +33,9 @@ A implementação foi elaborada seguindo os seguintes passos:
 || 13) ||Se alguem ganhou, anuncia o ganhador e termina o jogo.||
 
 
+= Considerações para simulação do código =
+
+O código abaixo fornecido foi desenvolvido para o microprocessador MIPS por meio do simulador MARS. Para simulá-lo será necessário abrir o BitmapDisplay, configurá-lo em 64x64, e conectá-lo ao MARS.
 
 = O código =
 
