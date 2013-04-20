@@ -1,4 +1,3 @@
-
 INTRODUÇÃO 
 
 Como foi propsto na matéria de Arquitetura de Computadores um desenvolvimento de um jogo em Assembly, decidi-se pelo jogo resta-um, que é um jogo solitário cujo objetivo é conseguir deixar apenas uma peça no tabuleiro que comportavam inicialmente várias peças. 
