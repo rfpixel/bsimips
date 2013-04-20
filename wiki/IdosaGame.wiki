@@ -17,20 +17,20 @@ O tabuleiro possui uma matriz de três linhas por três colunas;
 = Implementação =
 
 A implementação foi elaborada seguindo os seguintes passos:
-|| table ||
-|| cells ||1) Inicialização as diversas constantes (Endereçamento para o BitmapDisplay, Mensagens de texto, cores)
-|| cells ||2) Inicialização das variáveis (todas armazenadas em registradores)
-|| cells ||3) Desenha o tabuleiro
-|| cells ||4) Desenha o menu de opções
-|| cells ||5) Recebe uma tecla
-|| cells ||6) Avaliando a paridade do contador de jogadas determina se é a vez do X(ímpar) ou O (par)
-|| cells ||7) Verifica se posicao ja ocupada se sim (volta ao passo 4) 
-|| cells ||8) Se posicao desocupada desenha o X, ou o O na posicao escolhida
-|| cells ||9) Incrementa o contador
-|| cells ||10) Se o contador for maior que 4, verifica se alguém ganhou (passo 12)
-|| cells ||11) Se contador for maior que 9, termina o jogo.
-|| cells ||12) Se ninguem ganhou volta ao passo 4
-|| cells ||13) Se alguem ganhou, anuncia o ganhador e termina o jogo.
+|| Passos ||
+|| 1) || Inicialização as diversas constantes (Endereçamento para o BitmapDisplay, Mensagens de texto, cores)||
+|| 2) || Inicialização das variáveis (todas armazenadas em registradores)||
+|| 3) ||Desenha o tabuleiro||
+|| 4) ||Desenha o menu de opções||
+|| 5) ||Recebe uma tecla||
+|| 6) ||Avaliando a paridade do contador de jogadas determina se é a vez do X(ímpar) ou O (par)||
+|| 7) ||Verifica se posicao ja ocupada se sim (volta ao passo 4) ||
+|| 8) ||Se posicao desocupada desenha o X, ou o O na posicao escolhida||
+|| 9) ||Incrementa o contador||
+|| 10) ||Se o contador for maior que 4, verifica se alguém ganhou (passo 12)||
+|| 11) ||Se contador for maior que 9, termina o jogo.||
+|| 12) ||Se ninguem ganhou volta ao passo 4||
+|| 13) ||Se alguem ganhou, anuncia o ganhador e termina o jogo.||
 
 
 
