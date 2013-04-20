@@ -790,17 +790,17 @@ fim753_xb:
 }}}
 = Autores = 
 
-[ALINE ALINE FIGUEIREDO]
+[Idosa_Aut_AF ALINE FIGUEIREDO]
 ----------------
 
-[CRISTIANO CRISTIANO SANTANA CUNHA DE OLIVEIRA]
+[Idosa_Aut_CS CRISTIANO SANTANA CUNHA DE OLIVEIRA]
 -----------------
 
-[JE JESILENE GODOY]
+[Idosa_Aut_JG JESILENE GODOY]
 --------------
 
 
-[LUIS LUIS MIRANDA]
+[Idosa_Aut_LM LUIS MIRANDA]
 ------------
 
 
