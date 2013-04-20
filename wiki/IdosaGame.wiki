@@ -34,7 +34,7 @@ A implementação foi elaborada seguindo os seguintes passos:
 
 
 - Tabuleiro 
-<img src="https://bsimips.googlecode.com/svn/trunk/idosaGame/imagens/tabuleiro.png">
+<img src="https://bsimips.googlecode.com/svn/trunk/IdosaGame/Imagens/tabuleiro.PNG">
 
 
 = Considerações para simulação do código =
