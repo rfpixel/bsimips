@@ -1,6 +1,6 @@
 *Pessoal eu iniciei nossa wiki, e coloquei nela tudo que desenvolvemos*
-*até agora (arquivo em .doc, algoritmo, e assembly), ok? Paula Alves.*
-*Só não estou conseguindo por as figuras ainda.*
+*até agora (arquivo em .doc, algoritmo, e assembly), ok? *
+*Só não estou conseguindo por as figuras ainda. Paula Alves.*
 
 
 *RESTA 1*
