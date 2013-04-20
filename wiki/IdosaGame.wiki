@@ -32,8 +32,8 @@ A implementação foi elaborada seguindo os seguintes passos:
 || 8) ||Se posição desocupada desenha o X, ou o O na posição escolhida||
 || 9) ||Incrementa o contador||
 || 10) ||Se o contador for maior que 4, verifica se alguém ganhou (passo 12)||
-|| 11) ||Se contador for maior que 9, termina o jogo.||
-|| 12) ||Se ninguem ganhou (empate) volta ao passo 4||
+|| 11) ||Se contador for maior que 9 (empate) termina o jogo.||
+|| 12) ||Se ninguem ganhou volta ao passo 4||
 || 13) ||Se alguem ganhou, anuncia o ganhador e termina o jogo.||
 
 
