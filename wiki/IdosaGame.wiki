@@ -9,9 +9,13 @@ Historicamente, de acordo com estudos e pesquisadores, o seu nome tem se origina
 O tabuleiro possui uma matriz de três linhas por três colunas;
 
 -Dois jogadores escolhem uma marcação, ou seja, um escolhe o círculo (O) e o outro o xis (X);
+
 -Se inicia o jogo através de par ou ímpar (no nosso caso sempre começa-se com o X), e segue a sequência alternada, ou seja, uma marcação por vez, em uma lacuna que esteja vazia.
+
 -O principal objetivo do jogo é fazer com que três xis ou três círculos fiquem em linha horizontal, diagonal ou vertical, simultaneamente, quando possível impedir que o adversário ganhe na próxima jogada.
+
 -Quando um jogador consegue conquistar o objetivo, tem-se o costume de riscar os três símbolos.
+
 
 
 = Implementação =
@@ -29,17 +33,24 @@ A implementação foi elaborada seguindo os seguintes passos:
 || 9) ||Incrementa o contador||
 || 10) ||Se o contador for maior que 4, verifica se alguém ganhou (passo 12)||
 || 11) ||Se contador for maior que 9, termina o jogo.||
-|| 12) ||Se ninguem ganhou volta ao passo 4||
+|| 12) ||Se ninguem ganhou (empate) volta ao passo 4||
 || 13) ||Se alguem ganhou, anuncia o ganhador e termina o jogo.||
 
 
-- Tabuleiro 
+= Tabuleiro =
+
+
 <img src="https://bsimips.googlecode.com/svn/trunk/IdosaGame/Imagens/tabuleiro.PNG">
 
 
 = Considerações para simulação do código =
 
 O código abaixo fornecido foi desenvolvido para o microprocessador MIPS por meio do simulador MARS. Para simulá-lo será necessário abrir o BitmapDisplay, configurá-lo em 64x64, e conectá-lo ao MARS.
+
+
+<img src="https://bsimips.googlecode.com/svn/trunk/IdosaGame/Imagens/FinalJogo.PNG">
+
+
 
 = O código =
 
