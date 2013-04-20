@@ -35,7 +35,8 @@ A implementação foi elaborada seguindo os seguintes passos:
 
 
 = O código =
-'inline code'
+`inline code`
+{{{
 #######################################################################################
 #
 # NOME DO PROGRAMA: JOGO DA IDOSA
@@ -780,7 +781,8 @@ pulo753_xb:
 	j pulo753_xb
 fim753_xb:
 	jr $ra
-'*'	
+}}}
+`*`	
 ####################################################################
 
 = Autores = 
