@@ -1,5 +1,5 @@
 <br>Cristiano Santana Cunha de Oliveira
 <br>Graduando em Bacharelado de Sistemas de Informação - UFSCar
-<br>Professor do Instituto Federal de Tecnologia São Paulo - Campus Bragança Paulista
+<br>
 
 <a href="https://code.google.com/p/bsimips/wiki/IdosaGame">Wiki Jogo da Idosa</a>
