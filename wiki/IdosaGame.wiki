@@ -806,10 +806,10 @@ fim753_xb:
 
 = Referências = 
 
-http://situado.net/como-jogar-o-jogo-da-velha/
-http://www.cppgameprogramming.com/newforums/viewtopic.php?f=7&t=1920
-http://ellard.org/dan/www/Courses/cs50-asm.pdf
-http://www.tik.ee.ethz.ch/education/lectures/TI1/materials/assemblylanguageprogdoc.pdf
-http://courses.missouristate.edu/kenvollmar/mars/
-https://aur.archlinux.org/packages/mars-mips/?setlang=pt_BR
-http://cs.slu.edu/~fritts/csci140/schedule/MARS%20Tutorial.pdf
+<li>http://situado.net/como-jogar-o-jogo-da-velha/
+<li>http://www.cppgameprogramming.com/newforums/viewtopic.php?f=7&t=1920
+<li>http://ellard.org/dan/www/Courses/cs50-asm.pdf
+<li>http://www.tik.ee.ethz.ch/education/lectures/TI1/materials/assemblylanguageprogdoc.pdf
+<li>http://courses.missouristate.edu/kenvollmar/mars/
+<li>https://aur.archlinux.org/packages/mars-mips/?setlang=pt_BR
+<li>http://cs.slu.edu/~fritts/csci140/schedule/MARS%20Tutorial.pdf
