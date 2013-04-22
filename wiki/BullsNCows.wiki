@@ -1,0 +1,73 @@
+Página do jogo Bulls'n'Cows, criado por alunos do Bacharelado em Sistemas de Informação da UFSCar.
+
+= Introdução =
+
+*1. O jogo*
+
+Dado um número  escolhido aleatoriamente,  formado por quatro algarismos de 0 a 6, o jogador tem que advinhar os algarismos, inclusive sua sequência, que formam este número.  Este jogo lê o número de quatro dígitos digitado pelo usuário, retorna acertos “cows” (dígito certo na posição errada) e acertos “bulls” (dígito certo na posição certa), mantedo o histórico de tentativas do usuário na tela. Ao acertar o número secreto o jogador é declarado vencedor.
+
+ De acordo com referências na Wikipedia este é um jogo secular que se jogava usando lápis e papel. Precursor do hoje conhecido como “senha” (ou “mastermind”), há referências de que foi implementado pela primeira vez para o computador na década de 1970.
+
+
+= Detalhes =
+
+Documentação - Jogo Bulls and Cows (parcial)
+
+*2. O trabalho de desenvolvimento*
+
+O desenvolvimento deste projeto, sendo parte integrante das atividades previstas na disciplina de Arquitetura de Computadores, foi desenvolvido por um grupo de sete alunos do curso de BSI-UFSCar. O grupo, após organizar os seus meios de comunicação para o desenvolvimento do trabalho coletivo e dividir algumas tarefas entre os membros, investigou duas possibilidades de jogos a serem implementados - o “quadrado mágico” e o “bulls and cows”. Após alguns testes com exemplos desenvolvidos em linguagem de alto nível optou-se pelo “Bulls and Cows”. Paralelamente, algumas soluções foram desenvolvidas em linguagem Assembly do MIPS: geração aleatória de números, já utilizada; um timer, ainda não utilizado para pontuação; e gráficos, também ainda não utilizados.
+
+Sendo assim, este projeto ainda se encontra em desenvolvimento.
+
+*3. Algoritmo*
+
+Considerando algoritmo como um procedimento passo a passo para solução de problemas, também, como sequencia detalhada de ações a serem executadas para realizar alguma tarefa. (MEDINA, FERTIG, 2006). Iniciamos o projeto pela o algoritmo para conseguirmos orientar as ideias e planejar com mais eficiência e eficácia.
+A proposta de criarmos um jogo, nos fez remeter a ideia de aperfeiçoarmos a capacidade de criar programas de computador, como sabemos um programa de computador é um conjunto de instruções que será executado pelo processador em uma determinada sequencia. As instruções que o processador executa são buscadas da memória. (MEDINA, FERTIG, 2006).
+Programar em Assembly, que também é conhecida como linguagem de baixo nível, e linguagem de máquina, pois se distância da linguagem natural. A linguagem de programação que um computador é capaz de compreender é composta apenas de números. Portanto, quando fazemos um algoritmo na linguagem de programação do computador ou em sua linguagem de máquina é um processo extremamente complicado. Para facilitar a programação de computadores, foi necessária a criação de um código que relacionasse a linguagem de máquina a uma linguagem mais fácil de ser compreendida. Usar assembly, é utilizar a linguagem de montagem, é um código que tem uma instrução alfanumérica (ou mnemônica) para cada instrução numérica em linguagem de máquina. (MEDINA, FERTIG, 2006).
+Conhecer as regras do jogo, conseguir entender seu funcionamento, conseguir traduzir da linguagem natural para linguagem de máquinas, foi a estratégia para conseguirmos elaborar algoritmo, linguagem de alto nível e depois traduzir para linguagem de baixo nível.
+Algoritmo:
+Algoritmo_Jogo Senha
+Variáveis: inteiro i, geraSenha, letentativa, distDigitos, compara, tentativa, qtdeBulls, qtdeCowns
+Inicio
+Escreva: "Objetivo: Descobrir uma senha de 4 digitos. Bull: Digito certo na posicao certa. Cow: Digito certo na posicao errada.”
+Escreva: "Considerando os digitos de 1 a 6, digite uma sequencia de 4 deles, sem repeti-los (Ex: 3256): "
+Aleatório geraSenha();
+Ler: lerTentativa;
+lerTentativa = distDigitos;
+Se compara = = lerTentativa;
+Escreva: "Parabens, voce venceu!"
+Senão
+Para (tentativa=0; tentativa<10; tentativa++) 
+	Escreva “ A quantidade de cows eh: “, qtdeCowns;
+ 	Escreva “ A quantidade de bulls eh: “, qtdeBulls;
+Fim-algoritmo
+
+
+*4. Dicionário*
+
+Registradores:
+
+De $s0 a $s3: utilizados para guardarem um digito da senha secreta, sendo $s0 o digito mais 
+significativo;
+
+De $s4 a $s7: utilizados para guardarem um digito do palpite, sendo $s4 o digito mais 
+significativo;
+
+$t**: utilizados para guardarem valores temporários usados no processamento;
+
+$a** e $v**: utilizados na troca de informações nas syscalls e nos procedimentos.
+
+Procedimentos:
+
+geraSenha: gera a senha secreta - número de quatro dígitos (de 0 até 6);
+tentativa: executa a leitura de cada tentativa do usuário, copiando o endereço do inteiro lido;
+leTentativa: faz a leitura do número digitado pelo usuário;
+distDigitos: distribui cada dígito para um registrador;
+compara: compara os dígítos do palpite com os dígitos da senha secreta e registra o
+     número de acertos;
+feedback: imprime na tela o número de acertos;
+fimPrograma: finaliza o programa.
+
+*5. Conclusão (confirmar com o grupo!!!)*
+
+Como foi possível perceber o trabalho ainda está em desenvolvimento, porém, muito já foi alcançado - temos uma solução funcionando. Esperamos melhorar o código buscando meios de diminuir o número de interações, inserir os mecanismos de pontuação e recursos gráficos.
