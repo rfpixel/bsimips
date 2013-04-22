@@ -8,6 +8,35 @@ Dado um número  escolhido aleatoriamente,  formado por quatro algarismos de 0 a
 
  De acordo com referências na Wikipedia este é um jogo secular que se jogava usando lápis e papel. Precursor do hoje conhecido como “senha” (ou “mastermind”), há referências de que foi implementado pela primeira vez para o computador na década de 1970.
 
+= Código =
+
+<code language="asm">
+# Esboco do jogo Bulls and Cows.
+# Bull: Digito certo no local certo. Cow: Digito certo no local errado.
+# Cada registrador de $s0 a $s3 contera um digito da senha secreta, sendo $s0 o digito mais significativo
+# Cada registrador de $s4 a $s7 contera um digito do palpite, sendo $s4 o digito mais significativo
+# Registradores $t*, conterao valores temporarios usados no processamento
+# Registradores $a* e $v* serao utilizados na troca de informacoes nas syscalls e nos procedimentos
+
+.data
+    explicacao: .asciiz "Objetivo: Descobrir uma senha de 4 digitos.\nBull: Digito certo na posicao certa.\nCow: Digito certo na posicao errada.\n\n"
+    pedirTentativa: .asciiz "\nConsiderando os digitos de 1 a 6, digite uma sequencia de 4 deles, sem repeti-los (Ex: 3256): "
+    qtdeBulls: .asciiz "Bulls: "
+    qtdeCows: .asciiz ",  Cows: "
+    venceu: .asciiz "Parabens, voce venceu!"
+
+.text
+
+main:
+    # Apresenta a explicacao do jogo.
+    la $a0, explicacao   	 # Salva o endereco da string em $a0, para impressao
+    li $v0, 4   		 # Salva o valor 4 em $v0, indicando impressao de uma string
+    syscall   			 # Imprime a string na tela
+    
+    # Gera a senha secreta
+    jal geraSenha   		 # Salva 4 digitos (de 1 a 6) aleatorios em $s0-$s3
+</code>
+
 
 = Detalhes =
 
