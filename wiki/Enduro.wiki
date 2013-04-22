@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary Reedição do clássico do Atari
 
 = Introduction =
 
