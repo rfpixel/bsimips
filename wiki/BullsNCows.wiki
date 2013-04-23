@@ -97,6 +97,6 @@ compara: compara os dígítos do palpite com os dígitos da senha secreta e regi
 feedback: imprime na tela o número de acertos;
 fimPrograma: finaliza o programa.
 
-*5. Conclusão (confirmar com o grupo!!!)*
+*5. Conclusão*
 
 Como foi possível perceber o trabalho ainda está em desenvolvimento, porém, muito já foi alcançado - temos uma solução funcionando. Esperamos melhorar o código buscando meios de diminuir o número de interações, inserir os mecanismos de pontuação e recursos gráficos.
