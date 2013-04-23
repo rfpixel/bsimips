@@ -41,8 +41,9 @@ Bitmap Display
 # -------------------------------------------------------------------------------------------------------
 #					ENDURO
 #	
-#		ALUNOS:	Antonio Pantalena	RA 
-#			Cleber Augusto Borges	RA 483168
+#		ALUNOS:	Cleber Augusto Borges	RA483168
+#                               Rafael Eugênio Borges	RA483265
+#                                   Antonio Pantalena	RA483060
 #
 # -------------------------------------------------------------------------------------------------------
 #				INTRUCOES DE USO
