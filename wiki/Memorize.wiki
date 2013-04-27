@@ -1,0 +1,81 @@
+=Memorize: Jogo de memória para experts!
+<wiki:toc max_depth="1" />
+==Visão Geral
+O Memorize é um jogo simplificado de memorização em modo texto, desenvolvido através da linguagem Assemple para o processador MIPS e compatível 
+
+com o simulador [http://courses.missouristate.edu/kenvollmar/mars/ MARS] (versão 4.3 ou superiores).
+
+O projeto foi desenvolvido dentro da disciplina Arquitetura e Organização de Computadores, ministrada pelo Professor Ricardo Menotti, na 
+
+Universidade Federal de São Carlos (UFSCar), objetivando a consolidação dos conceitos de programação em baixo nível abordados ao longo do curso.
+
+==Autores
+  * Alan Ghelardi
+  * Bruna Barbosa dos Santos
+  * Danilo Trabuco do Amaral
+  * Eronaldo José da Silva 
+
+==Como executar
+Para executar o Memorize, abra o arquivo main.asm no simulador [http://courses.missouristate.edu/kenvollmar/mars/ MARS] (versão 4.3 ou superiores) e 
+proceda normalmente: monte o arquivo através do menu Run > Assemble e após clique em Run > Go. Alternativamente, execute o jogo 
+através da linha de comando do sistema. Para isso, considerando que o arquivo .jar do MARS está no mesmo diretório dos fontes do jogo, 
+navegue até esse diretório e digite o seguinte comando:
+
+`java -jar Mars4_3.jar main.asm
+`
+
+ Caso esteja utilizando uma versão do simulador [http://courses.missouristate.edu/kenvollmar/mars/ MARS] superior a 4.3, substitua o nome do arquivo .jar no comando acima pelo nome correto da sua 
+
+distribuição.
+
+*Importante:* como o Memorize utiliza macros do MARS incluídas na versão 4.3 do simulador, você necessitará 
+dessa versão ou de superiores para rodar o jogo. Em versões anteriores, as diretivas .macro, .include e .equiv não serão reconhecidas e os 
+arquivos não serão montados. 
+
+==Regras e funcionamento
+O memorize é um jogo de memorização baseado em números aleatórios. O principal objetivo do jogador é memorizar os números aleatórios gerados em 
+
+cada nível de dificuldade do jogo e digitá-los em ordem.    
+
+O jogo apresenta um menu inicial com as opções *Jogar*, *Exibir pontuação*, *Exibir ajuda* e *Sair*. Após selecionar a opção *Jogar*, é exibida 
+
+uma mensagem perguntando ao usuário se ele deseja selecionar o nível de dificuldade do jogo. Caso o jogador selecione a opção "sim", é possível 
+
+definir o nível de dificuldade em que o jogo será iniciado. Selecionando a opção "não", o Memorize inicia no nível 1.
+
+Por padrão, o jogo apresenta cinco níveis de dificuldade. No primeiro nível, 
+o jogador deverá acertar cinco sequências contendo três números cada. Nesse nível, os números permanecerão visíveis por 3 segundos. No segundo 
+
+nível, o jogador deverá acertar quatro sequências de cinco números cada. No terceiro nível, o jogador deverá acertar três sequências de sete 
+
+números cada. Nesses dois níveis os números aleatórios permanecem visíveis por 4 segundos. No quarto nível, o jogador deverá acertar duas 
+
+sequências contendo nove números, os quais permanecerão visíveis por 5 segundos. No quinto e último nível, o jogador deverá acertar uma 
+
+sequência de 10 números. Nesse nível os números permanecem visíveis por 6 segundos. Salienta-se que o jogador não possui tempo limite para 
+
+digitar cada número. 
+
+A cada sequência numérica exibida, o Memorize informa o nível atual, o número da sequência atual, a quantidade de sequências a serem memorizadas 
+
+no nível e o tempo de memorização. Além disso, um efeito sonoro (que varia de acordo com a plataforma em que o jogo é executado) indica a 
+
+passagem de cada segundo. Após informar todos os números da última sequência do nível, o Memorize exibe o índice de acertos do jogador e lhe 
+
+oferece a possibilidade de continuar jogando ou de retornar ao menu principal. Novamente, efeitos sonoros e mensagens customizadas são 
+
+utilizados para indicar o resultado da tentativa, isto é, informar ao jogador se ele está ou não apto a passar ao próximo nível de dificuldade 
+
+do jogo. 
+
+Quando o jogador decide progredir entre os níveis do Memorize, isto é, opta por seguir a sequência natural dos níveis de dificuldade em vez de 
+
+selecionar um nível árbitrário através do menu do programa, a única forma de avançar de um nível para outro é acertando todos os números 
+
+exibidos em cada sequência pertencente ao nível atual.
+
+A qualquer momento é possível verificar sua pontuação geral a partir da opção *Exibir pontuação* no menu principal do Memorize. Essa pontuação 
+
+corresponde a somatória dos acertos obtidos em cada tentativa ao longo dos níveis do jogo. Ainda no menu principal do programa, a opção *Exibir 
+
+ajuda* mostra um pequeno guia sobre o funcionamento do jogo, enquanto que a opção *Sair* encerra o Memorize.      
