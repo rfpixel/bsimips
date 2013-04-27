@@ -1,4 +1,5 @@
-*Memorize: Jogo de memória para experts!*
+
+*Um jogo de memória para experts!*
 
 
 <g:plusone size="medium"></ g:plusone>
@@ -10,14 +11,14 @@
 == Visão Geral ==
 
 
-O Memorize é um jogo simplificado de memorização em modo texto, desenvolvido através da linguagem Assemple para o processador MIPS e compatível 
+O Memorize é um jogo simplificado de memorização em modo texto, desenvolvido através da linguagem Assemply para o processador MIPS e compatível 
 
 com o simulador [http://courses.missouristate.edu/kenvollmar/mars/ MARS] (versão 4.3 ou superiores).
 
 
-O projeto foi desenvolvido dentro da disciplina Arquitetura e Organização de Computadores, ministrada pelo Professor Ricardo Menotti, na 
+O projeto foi desenvolvido dentro da disciplina Arquitetura e Organização de Computadores, ministrada pelo Prof. Dr. [http://ufscar.academia.edu/RicardoMenotti Ricardo Menotti], no Bacharelado em Sistemas de Informação da [http://www2.ufscar.br/home/index.php UFSCar] (Universidade Federal de São Carlos), objetivando a consolidação dos conceitos de programação em baixo nível abordados ao longo do 
 
-Universidade Federal de São Carlos (UFSCar), objetivando a consolidação dos conceitos de programação em baixo nível abordados ao longo do curso.
+curso.
 
 
 == Autores ==
@@ -103,3 +104,200 @@ corresponde a somatória dos acertos obtidos em cada tentativa ao longo dos nív
 
 ajuda* mostra um pequeno guia sobre o funcionamento do jogo, enquanto que a opção *Sair* encerra o Memorize.      
 
+
+== Estrutura interna ==
+
+
+Para o desenvolvimento do Memorize optou-se pela ampla utilização das diretivas *.macro*, *.include* e *.equiv*, introduzidas na versão 4.3 do 
+
+simulador [http://courses.missouristate.edu/kenvollmar/mars/ MARS]. Ainda que o emprego de tais recursos tenha comprometido a compatibilidade do 
+
+projeto com versões anteriores do simulador, observou-se um acréscimo indiscutível na legibilidade e na qualidade do código, possibilitando uma 
+
+maior modularização do software, evitando a duplicação de código e por conseguinte, favorecendo consideravelmente o reaproveitamento de 
+
+componentes.
+
+
+Em suma, a diretiva *.macro* possibilita a declaração de sequências de instruções utilizadas com certa frequência ao longo do programa. Uma vez 
+
+definida, a macro pode ser invocada através da declaração do seu identificador, de forma semelhante ao que ocorre na chamada de procedimentos em 
+
+linguagens de mais alto nível. Durante o processo de montagem do arquivo, o assembler se encarrega de substituir as ocorrências do identificador 
+
+pelas instruções declaradas no corpo da macro em questão.
+
+
+Uma característica importante das macros presentes no [http://courses.missouristate.edu/kenvollmar/mars/ MARS] é a possibilidade de definir-se 
+
+uma lista de parâmetros formais, de forma análoga à declaração de parâmetros em procedimentos. Novamente, durante o processo de montagem o 
+
+assembler substitui os identificadores dos parâmetros utilizados nas instruções presentes no corpo da macro, pelos parâmetros informados na 
+
+invocação desta (em geral, _labels_ para endereços na memória, identificadores de registradores e valores literais). Esse recurso possibilita a 
+
+emulação de procedimentos de uma forma diferente à apresentada pelas convenções seguidas na linguagem Assembly do MIPS para a criação e 
+
+invocação de subrotinas, passagem de parâmetros e retorno de valores (baseadas no emprego de _labels_, utilização da instrução `jal` e do 
+
+registrador `$ra`, na manipulação da _stack_ e em um protocolo para a utilização de registradores para a passagem de argumentos e retorno de 
+
+resultados).
+
+
+No Memorize, as macros foram amplamente empregadas para a criação de procedimentos utilizados em diversos módulos do software (evitando a 
+
+duplicação do código) e para uma melhor organização do processamento (facilitando a legibilidade e futuras manutenções). A seguir, a fim de 
+
+ilustrarmos tais práticas, demonstramos uma macro declarada no arquivo utilities.asm, cuja finalidade é abrir um arquivo presente no disco 
+
+rígido, ler seu conteúdo para a memória, imprimir esse conteúdo e fechar o arquivo. Essa macro foi utilizada para carregar e imprimir o 
+
+cabeçalho do memorize e o conteúdo da ajuda a partir de arquivos externos.
+{{{
+# Procedimento que abre o arquivo informado como parâmetro, lê seu conteúdo e o imprime no output padrão.
+# Após ter impresso o conteúdo do arquivo, este é fechado. 
+# Parâmetros:
+# $file_name: nome do arquivo a ser lido e impresso.
+# $maximum_numbers_of_characters: número máximo de caracteres a serem lidos no arquivo.
+.macro print_from_file($file_name, $maximum_numbers_of_characters)
+	.data
+		# Buffer para armazenar o conteúdo do arquivo lido.
+		buffer: .space $maximum_numbers_of_characters
+	.text
+		# Carrega o open file service.
+		li $v0, 13
+		# Carrega o endereço que contém o nome do arquivo.
+		la $a0, $file_name
+		# Flag indicando que o arquivo será aberto em modo de leitura.
+		li $a1, 0
+		li $a2, 0 
+		# Abre o arquivo indicado e retorna o "file descriptor" através de $v0.
+		syscall
+		# Salva o file descriptor em $t0.
+		move $t0, $v0
+
+		# Carrega o read file service.
+		li $v0, 14
+		move $a0, $t0 # file descriptor
+		la $a1, buffer # buffer para o qual será copiado o conteúdo do arquivo.
+		li $a2, $maximum_numbers_of_characters # número máximo de caracteres a serem lidos
+		syscall # lê o conteúdo do arquivo
+
+		# Carrega o print string service
+		li $v0, 4
+		la $a0, buffer # carrega o buffer com o conteúdo do arquivo
+		syscall # imprime o conteúdo do arquivo carregado
+
+				# Carrega o close file service
+		li $v0, 16
+		move $a0, $t0 # file descriptor a ser fechado
+		syscall # fecha o arquivo
+.end_macro
+}}}
+
+
+Outro aspecto importante a ser citado, diz respeito a manipulação da _stack_ em procedimentos que invocam outros procedimentos, a fim de 
+
+evitar-se conflitos entre os registradores utilizados. Para criar um software modular e minimamente organizado, tirando proveito da reutilização 
+
+de código proporcionada pelas macros do [http://courses.missouristate.edu/kenvollmar/mars/ MARS], foi preciso utilizar, com certa frequência, a 
+
+chamada a procedimentos a partir de outros procedimentos, tornando necessário emular _stack frames_ para evitar que valores de registradores 
+
+fossem sobreescritos, gerando _bugs_ de difícil detecção. O código a seguir, extraído do arquivo core.asm, ilustra uma macro na qual uma _stack 
+
+frame_ é criada no início da sessão de instruções do procedimento. Ao longo da sequência de instruções o valor presente no registrador $t0 é 
+
+salvo na _stack_ e restaurado após a chamada do procedimento _clear_, assumindo a possibilidade de que esse procedimento possa ter utilizado o 
+
+registrador temporário $t0 em sua implementação. Por fim, a macro restaura o _stack pointer_ a sua posição original, "destruindo" a _stack 
+
+frame_ criada.
+
+{{{
+# Permite ao usuário selecionar o nível de dificuldade do jogo se desejado.
+.macro prompt_select_level($level)
+	.data
+		yes: .byte 's'
+		no: .byte 'n'
+	.text
+		sub $sp, $sp, 4 # stack frame
+		prompt: print_string("Deseja selecionar o nivel de dificuldade do jogo?\n")
+		print_string("s = sim, n = nao (comeca pelo nivel 1):")
+		read_character($t0)
+		sw $t0, 0 ($sp) # salva a resposta na stack
+		clear
+
+		lw $t0, 0 ($sp) # restaura a resposta da stack
+		# Carrega da memória os caractéres de comparação.
+		lb $t1, yes
+		lb $t2, no
+
+		beq $t0, $t1, get_level
+		beq $t0, $t2, use_first_level
+		# Se nenhum dos dois desvios foi executado, a opção é inválida.
+		print_string("Opcao invalida. Por favor, tente novamente\n\n")
+		j prompt 
+ 
+		get_level:
+			print_string("Informe o nivel desejado (somente valores que estejam no intervalo [1-5]): ")
+			read_integer($t0)
+			# A seguir, validamos se a entrada está no intervalo informado.
+			slt $t1, $0, $t0
+			slti $t2, $t0, 6
+			and $t3, $t1, $t2  
+			li $t4, 1 # valor para comparação
+			beq $t3, $t4, end_prompt_select_level
+			# Se esse trecho foi executado, então o valor digitado é inválido.
+			clear
+			print_string("Valor invalido, por favor, tente novamente\n\n")
+			j get_level 
+
+		use_first_level:
+			li $t0, 1 # primeiro nível
+
+			end_prompt_select_level:
+				sw $t0, $level # armazena na memória o nível a ser utilizado 
+				addi $sp, $sp, 4 # restaura a stack frame  
+.end_macro
+}}}
+
+
+As diretivas *.include* e *.equiv* presentes no [http://courses.missouristate.edu/kenvollmar/mars/ MARS] apresentam funções semelhantes às 
+
+macros de pré-processamento *#include* e *#define* presentes na linguagem C. Em particular, a diretiva *.include* foi empregada no Memorize para 
+
+possibilitar a divisão de responsabilidades sobre o processamento das operações necessárias para o funcionamento do software através de cinco 
+
+módulos, quais sejam:
+  * main.asm: contém as instruções responsáveis pela lógica de execução do software, variáveis e constantes de escopo global, etc.
+  * core.asm: contém os procedimentos relacionados à lógica central do jogo.
+  * random.asm: contém procedimentos responsáveis pela geração de números aleatórios.
+  * sound_efects.asm: contém procedimentos relacionados à geração de efeitos sonoros para o jogo.
+  * utilities.asm: contém procedimentos utilitários empregados nos demais módulos.
+
+
+Para maiores informações sobre a utilização das diretivas *.macro*, *.include* e *.equiv* introduzidas na versão 4.3 do 
+
+[http://courses.missouristate.edu/kenvollmar/mars/ MARS], sugerimos a leitura da documentação oficial disponível em 
+
+http://courses.missouristate.edu/kenvollmar/mars/help/MacrosHelp.html.   
+
+
+Por fim, cita-se a ampla utilização das _systemcalls_ suportadas pelo simulador [http://courses.missouristate.edu/kenvollmar/mars/ MARS] para o 
+
+desenvolvimento do Memorize. Algumas das _syscalls_ empregadas no programa são descritas na tabela a seguir.
+
+|| *Syscall(s)* || *Código(s) em $v0 * || *Utilização* ||
+|| _Print Integer_, _Print String_, _Read Integer_ e _Read Character_ || 1, 4, 5 e 12 || operações básicas de _I_/_O_ ||
+|| _Exit_ || 10 || encerramento do programa ||
+|| _Open File_, _Read from File_ e _Close File_ || 13, 14 e 16 || leitura de arquivos externos (cabeçalho do programa e conteúdo da ajuda) ||
+|| _Time_, _Set Seed_ e _Random Int Range_ || 30, 40 e 42 || geração de números randômicos ||
+|| _Sleep_ || 32 || interrupção da thread atual (inserção de pausas na execução) ||
+|| _MIDI out synchronous_ || 33 || geração de efeitos sonoros ||
+
+
+Para uma referência completa sobre as _systemcalls_ suportadas pelo simulador MARS, recomendamos a leitura da documentação oficial disponível em 
+
+http://courses.missouristate.edu/kenvollmar/mars/help/syscallhelp.html.
