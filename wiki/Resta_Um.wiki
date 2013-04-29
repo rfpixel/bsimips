@@ -16,8 +16,11 @@ Vitor Alves de Andrade 435970
 
 ==*INTRODUÇÃO*==
 
+<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/resta1.png">
+
 Como foi propsto na matéria de Arquitetura de Computadores um desenvolvimento de um jogo em Assembly, decidi-se pelo jogo resta-um, que é um jogo solitário cujo objetivo é conseguir deixar apenas uma peça no tabuleiro que comportavam inicialmente várias peças. 
 Como todo jogo, há regras, as quais permitem que um peça no tabuleiro possa “eliminar” outra peça em posição adjacente horizontal ou verticalmente aquela, sendo que a posição alcançada é a posição vizinha da peça eliminada.
+
 
 ==*OBJETIVO*==
 
@@ -252,6 +255,8 @@ A figura 1 ilustra um tabuleiro do jogo RESTA UM. Começa-se o jogo com peças e
 Nesse jogo, a única jogada possível consiste em: dadas três casas consecutivas em linha, na horizontal ou na vertical, se uma das casas, que não a central, estiver vazia e as outras duas, ocupadas, uma das peças salta a outra, adjacente, retirando-se do jogo a que foi pulada. Se não for possível realizar a jogada, o jogo acaba.
 Na Figura 2, vê-se a casa A vazia e as casas B e C ocupadas. A peça que está em C pula a que está em B e passa a ocupar a casa A. A peça da casa B, que foi pulada, é retirada do jogo (Figura 3).
 
+<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/figura1.png">
+
 
 Para eliminar uma bolinha, você precisa "pular" sobre ela, como no jogo de Damas. Para fazer isso, clique sobre a bolinha que vai pular outra que tenha uma casa vazia ao lado. 
 
@@ -282,5 +287,3 @@ No fim do jogo aparecerá na janela como as possíveis mensagens: você ganhou o
 Este trabalho permitiu aplicar os conhecimentos teóricos da matéria Arquiterura de computado, sendo que o projeto de um jogo interativo obrigou os componentes do grupo a estudar mais detalhadamente a linguegem assembly.
 
 ==*REFERÊNCIAS*==
-
-[https://code.google.com/p/bsimips/source/browse/trunk/Resta%20um/resta1.jpg]
