@@ -263,7 +263,8 @@ Para eliminar uma bolinha, você precisa "pular" sobre ela, como no jogo de Dama
 Se houver mais de um movimento possível com a bolinha escolhida, aparecem sinais em vermelho para você escolher, clicando sobre um deles. 
 
 Ganha-se o jogo quando resta apenas uma bolinha.
-DESNVOLVIMENTO DO JOGO
+
+==*DESNVOLVIMENTO DO JOGO*==
 
 Para a manipulação foi preciso a construção de um tabuleiro, como um vetor de 33 buracos. 
 Foi preciso também definir algumas variáveis, como:
