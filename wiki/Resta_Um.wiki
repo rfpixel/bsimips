@@ -1,17 +1,18 @@
-*Pessoal eu iniciei nossa wiki, e coloquei nela tudo que desenvolvemos*
-*até agora (arquivo em .doc, algoritmo, e assembly), ok? *
-*Só não estou conseguindo colocar as figuras ainda. Paula Alves.*
+=*GAME: RESTA 1*=
 
+===*Integrantes:*===
 
-=*RESTA 1*=
-
-*Integrantes:*
 
 Clodoaldo Ribeiro dos Santos 482773
+
 Maiara Guimaraes Flausino 435589
+
 Marcelo Vieira Arjona 434558 
+
 Paula Gabriela Mota Alves 483125
+
 Vanderli Gilson de Sousa 482765
+
 Vitor Alves de Andrade 435970
 
 ==*INTRODUÇÃO*==
@@ -19,6 +20,7 @@ Vitor Alves de Andrade 435970
 <img src="https://bsimips.googlecode.com/svn/trunk/Resta um/resta1.png">
 
 Como foi propsto na matéria de Arquitetura de Computadores um desenvolvimento de um jogo em Assembly, decidi-se pelo jogo resta-um, que é um jogo solitário cujo objetivo é conseguir deixar apenas uma peça no tabuleiro que comportavam inicialmente várias peças. 
+
 Como todo jogo, há regras, as quais permitem que um peça no tabuleiro possa “eliminar” outra peça em posição adjacente horizontal ou verticalmente aquela, sendo que a posição alcançada é a posição vizinha da peça eliminada.
 
 
@@ -26,233 +28,14 @@ Como todo jogo, há regras, as quais permitem que um peça no tabuleiro possa �
 
 O objetivo deste trabalho é consolidar os conhecimentos sobre a linguegem assembly, desnvolvendo um jogo “resta-um”, a fim de colocar em prática os conhecimentos teóricos adquiridos na matéria. 
 
-==*ALGORITMO*==
-
-{
-
-Estou fazendo uma algoritmo para direcionar nosso trabalho, travei um pouco na hora em que a peça passa por cima da outra como fazer as verificações se alguém puder ajudar.
-
-}
-
-
-{ Algoritmo do jogo Resta 01 }
-
-Declare:
-
-vetor[7][7]: tipo char
-verificar: tipo inteiro
-linha, coluna: tipo inteiro
-l, c: tipo inteiro
-
-
-{ iniciar o vetor }
-
-para i <- 0 até i < 7
-
-para j = 0 até 7 faça
-
-se j < 3 e i < 3 ou i > 6 faça
-
-vetor[i][j] <- " "
-
-senão
-
-vetor[i][j] <- X { Peças do jogo e um vetor recebe vazio }
-
-fim para
-
-fim para
-
-vetor[4][4] <- " " { vazio, zerando a posição do do jogo }
-
-c <- 0
-l <- 0
-
-
-faça enquanto
-
-escreva "Digite a opção desejada"
-escreva "0 para sair"
-escreva "Escolha a Linha de 1 a 7"
-escreva "Escolha a Coluna de 1 a 7"
-
-leia Linha
-leia Coluna
-
-se linha ou coluna = 0 então
-
-fim algoritmo
-
-senão
-
-se vetor[linha][coluna] = " " ou linha > 7 ou coluna > 7então
-
-escreve "Posição invalida"
-
-senão
-
-
-leia l {Pegar onde o usario quer jogar }
-leia c {Pegar onde o usario quer jogar }
-
-se vetro[l][c] <> " " ou l > 7 ou c > 7 então
-
-escreva "Opção invalida"
-
-senão
-
-se c < 3 e l < 3 ou c > 5 e l < 3 ou c < 3 e l > 5 ou c > 3 e l > 5 então
-
-escreva "Opção invalida"
-
-senão
-
-se linha - l > 2 ou < - 2 ou coluna - c > 2 ou < -2 então
-
-escreva "Opção invalida"
-
-senão
-
-se linha = l então
-
-se coluna > c então
-
-se vetor[linha][coluna - 1] <> " "
-
-vetor[linha][coluna - 1] <- " "
-
-senão
-
-escreva "Jogada invalida"
-
-fim - se
-
-senão
-se vetor[linha][coluna + 1] <> " "
-
-vetor[linha][coluna + 1] <- " "
-
-senão
-
-escreva "Jogada invalida"
-
-
-fim - se
-
-fim - se
-
-se coluna = c
-
-se linha > l então
-
-se vetor[linha-1][coluna] <> " " então
-
-vetor[linha-1][coluna] <- " "
-
-senão
-
-escreva "Jogada invalida"
-
-fim - se
-
-
-senão
-
-se vetor[linha+1][coluna] <> " " então
-
-vetor[linha+1][coluna] <- " "
-
-senão
-
-escreva "Jogada invalida"
-
-fim - se
-
-
-fim - se
-
-
-fim - se
-
-se linha <> l e coluna <> c então
-
-se linha > l e coluna > c então
-
-se vetor[linha - 1][coluna - 1] <> " " então
-
-vetor[linha - 1][coluna - 1] <- " "
-
-senão
-
-escreva "Jogada invalida"
-
-fim - se
-
-
-se linha < l e coluna < c então
-
-se vetor[linha + 1][coluna - 1] <> " " então
-
-vetor[linha + 1][coluna - 1] <- " "
-
-senão
-
-escreva "Jogada invalida"
-
-fim - se
-
-
-
-se linha > l e coluna < c então
-
-se vetor[linha - 1][coluna + 1] <> " " então
-
-vetor[linha - 1][coluna + 1] <- " "
-
-senão
-
-escreva "Jogada invalida"
-
-fim - se
-
-
-
-se linha < l e coluna > c então
-
-se vetor[linha + 1][coluna - 1] <> " " então
-
-vetor[linha + 1][coluna - 1] <- " "
-
-senão
-
-escreva "Jogada invalida"
-
-fim - se
-
-
-
-fim - se
-
-
-fim - se
-
-
-fim - se
-
-fim - se
-
-fim - se
-
-fim se
-
-fim faça
-
 
 ==*RESTA 1*==
 
 
 A figura 1 ilustra um tabuleiro do jogo RESTA UM. Começa-se o jogo com peças em todas as casas, exceto em uma, que está inicialmente vazia. Nesse jogo, todas as peças podem ser movimentadas. No entanto, cada casa comporta, no máximo, uma peça.
+
 Nesse jogo, a única jogada possível consiste em: dadas três casas consecutivas em linha, na horizontal ou na vertical, se uma das casas, que não a central, estiver vazia e as outras duas, ocupadas, uma das peças salta a outra, adjacente, retirando-se do jogo a que foi pulada. Se não for possível realizar a jogada, o jogo acaba.
+
 Na Figura 2, vê-se a casa A vazia e as casas B e C ocupadas. A peça que está em C pula a que está em B e passa a ocupar a casa A. A peça da casa B, que foi pulada, é retirada do jogo (Figura 3).
 
 <img src="https://bsimips.googlecode.com/svn/trunk/Resta um/figura1.png">
@@ -267,11 +50,17 @@ Ganha-se o jogo quando resta apenas uma bolinha.
 ==*DESNVOLVIMENTO DO JOGO*==
 
 Para a manipulação foi preciso a construção de um tabuleiro, como um vetor de 33 buracos. 
+
 Foi preciso também definir algumas variáveis, como:
+
 origem, buraco de onde o jogador selecionou a peça para movê-la;
+
 pula, buraco vizinho imediato da origem que vai ser eliminado no final de um passo sucedido;
+
 final, buraco onde a peça ficará depois de uma  jogada;
+
 pecas, número de peças sobre o tabuleiro (atualizado a cada passo);
+
 vencedor, 1 quando o jogador ganhou e 0 quando perdeu.
  
 Passo a passo do jogo
@@ -279,8 +68,10 @@ Um passo do jogo consiste na seleção de uma peça pelo jogador, no deslocament
  
 ==*RESULTADOS*==
 
-Manual do usuário
+===Manual do usuário===
+
 Quando a janela de jogo se abre, o usuario pode começar a jogar selecionando uma peça com um clique e rastreando-a aonde quiser mantendo-se o botão esquerdo do mouse apertado. Uma vez a posição de destino atingida, é só liberar o botão do mouse. Se a jogada for impossível, a peça voltará ao seu lugar anterior. Caso contrário, ela ficará nesta posição e a peça pulada sumirá. 
+
 No fim do jogo aparecerá na janela como as possíveis mensagens: você ganhou ou você perdeu. 
 
 ==*CONCLUSÃO*==
