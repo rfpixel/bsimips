@@ -3,7 +3,7 @@
 *Só não estou conseguindo colocar as figuras ainda. Paula Alves.*
 
 
-*=RESTA 1=*
+=*RESTA 1*=
 
 *Integrantes:*
 
@@ -14,16 +14,16 @@ Paula Gabriela Mota Alves 483125
 Vanderli Gilson de Sousa 482765
 Vitor Alves de Andrade 435970
 
-*==INTRODUÇÃO==*
+==*INTRODUÇÃO*==
 
 Como foi propsto na matéria de Arquitetura de Computadores um desenvolvimento de um jogo em Assembly, decidi-se pelo jogo resta-um, que é um jogo solitário cujo objetivo é conseguir deixar apenas uma peça no tabuleiro que comportavam inicialmente várias peças. 
 Como todo jogo, há regras, as quais permitem que um peça no tabuleiro possa “eliminar” outra peça em posição adjacente horizontal ou verticalmente aquela, sendo que a posição alcançada é a posição vizinha da peça eliminada.
 
-*==OBJETIVO==*
+==*OBJETIVO*==
 
 O objetivo deste trabalho é consolidar os conhecimentos sobre a linguegem assembly, desnvolvendo um jogo “resta-um”, a fim de colocar em prática os conhecimentos teóricos adquiridos na matéria. 
 
-*==ALGORITMO==*
+==*ALGORITMO*==
 
 {
 
@@ -245,7 +245,7 @@ fim se
 fim faça
 
 
-*==RESTA 1==*
+==*RESTA 1*==
 
 
 A figura 1 ilustra um tabuleiro do jogo RESTA UM. Começa-se o jogo com peças em todas as casas, exceto em uma, que está inicialmente vazia. Nesse jogo, todas as peças podem ser movimentadas. No entanto, cada casa comporta, no máximo, uma peça.
@@ -271,16 +271,16 @@ vencedor, 1 quando o jogador ganhou e 0 quando perdeu.
 Passo a passo do jogo
 Um passo do jogo consiste na seleção de uma peça pelo jogador, no deslocamento desta e termina quando a peça é solta.
  
-*==RESULTADOS==*
+==*RESULTADOS*==
 
 Manual do usuário
 Quando a janela de jogo se abre, o usuario pode começar a jogar selecionando uma peça com um clique e rastreando-a aonde quiser mantendo-se o botão esquerdo do mouse apertado. Uma vez a posição de destino atingida, é só liberar o botão do mouse. Se a jogada for impossível, a peça voltará ao seu lugar anterior. Caso contrário, ela ficará nesta posição e a peça pulada sumirá. 
 No fim do jogo aparecerá na janela como as possíveis mensagens: você ganhou ou você perdeu. 
 
-*==CONCLUSÃO==*
+==*CONCLUSÃO*==
 
 Este trabalho permitiu aplicar os conhecimentos teóricos da matéria Arquiterura de computado, sendo que o projeto de um jogo interativo obrigou os componentes do grupo a estudar mais detalhadamente a linguegem assembly.
 
-*==REFERÊNCIAS==*
+==*REFERÊNCIAS*==
 
 <img src="https://code.google.com/p/bsimips/source/browse/trunk/Resta%20um/resta1.jpg">
