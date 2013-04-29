@@ -69,6 +69,16 @@ Ou, em outro desafio, manter uma peça congelada, sem se mexer até a última jo
 
 ===2 - Documentar a sequência do projeto===
 
+*INÍCIO DO JOGO*
+
+- Tabuleiro na tela
+
+<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/imagem 1.png">
+
+- Movimento das pedras
+
+<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/teste2.png">
+
 ===3 - Documentar métodos utilizados===
 
 
