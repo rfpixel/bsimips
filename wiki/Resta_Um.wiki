@@ -283,4 +283,4 @@ Este trabalho permitiu aplicar os conhecimentos teóricos da matéria Arquiterur
 
 ==*REFERÊNCIAS*==
 
-<img src="https://code.google.com/p/bsimips/source/browse/trunk/Resta%20um/resta1.jpg">
+[https://code.google.com/p/bsimips/source/browse/trunk/Resta%20um/resta1.jpg]
