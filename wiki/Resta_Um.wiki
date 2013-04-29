@@ -282,3 +282,5 @@ No fim do jogo aparecerá na janela como as possíveis mensagens: você ganhou o
 Este trabalho permitiu aplicar os conhecimentos teóricos da matéria Arquiterura de computado, sendo que o projeto de um jogo interativo obrigou os componentes do grupo a estudar mais detalhadamente a linguegem assembly.
 
 *==REFERÊNCIAS==*
+
+<img src="https://code.google.com/p/bsimips/source/browse/trunk/Resta%20um/resta1.jpg">
