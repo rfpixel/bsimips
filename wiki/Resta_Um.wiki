@@ -144,4 +144,9 @@ No fim do jogo aparecerá na janela como as possíveis mensagens: você ganhou o
 Este trabalho permitiu aplicar os conhecimentos teóricos da matéria Arquiterura de computado, sendo que o projeto de um jogo interativo obrigou os componentes do grupo a estudar mais detalhadamente a linguegem assembly.
 
 ==*REFERÊNCIAS*==
-Fonte: http://super.abril.com.br/cotidiano/resta-um-pula-sela-mental-439520.shtml
+
+http://msdn.microsoft.com/pt-br/library/vstudio/352sth8z.aspx
+
+http://super.abril.com.br/cotidiano/resta-um-pula-sela-mental-439520.shtml
+
+http://publib.boulder.ibm.com/infocenter/zos/v1r11/index.jsp?topic=/com.ibm.zos.r11.asma400/prepmac.htm
