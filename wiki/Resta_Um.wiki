@@ -146,7 +146,9 @@ Este trabalho permitiu aplicar os conhecimentos teóricos da matéria Arquiterur
 ==*REFERÊNCIAS*==
 
 Definição de blocos de __asm como Macros C. Visual Studio, Microsoft. Disponpivel em: <http://msdn.microsoft.com/pt-br/library/vstudio/352sth8z.aspx>. Acesso em: 29 Abr 2013.
+
  
 NETO, Luiz Dal Monte. Jogo Resta-um. Super Interessante, Jul. 1990. Disponível em: <http://super.abril.com.br/cotidiano/resta-um-pula-sela-mental-439520.shtml>. Acesso em: 29 Abr 2013.
+
 
 High Level Assembler for z/OS & z/VM & z/VSE V1R6 (HLASM V1R6) Language Reference: How to specify macro definitions. IBM. Disponível em: <http://publib.boulder.ibm.com/infocenter/zos/v1r11/index.jsp?topic=/com.ibm.zos.r11.asma400/prepmac.htm>. Acesso em: 29 Abr 2013.
