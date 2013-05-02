@@ -72,7 +72,7 @@ vencedor, 1 quando o jogador ganhou e 0 quando perdeu.
 Passo a passo do jogo
 Um passo do jogo consiste na seleção de uma peça pelo jogador, no deslocamento desta e termina quando a peça é solta.
 
-===1 - Documentação a sequência do projeto===
+===1 - Documentação da sequência do projeto===
 
 
 - *INÍCIO DO JOGO* : Tabuleiro na tela
@@ -83,7 +83,7 @@ Um passo do jogo consiste na seleção de uma peça pelo jogador, no deslocament
 
 <img src="https://bsimips.googlecode.com/svn/trunk/Resta um/teste2.png">
  
-===2 - Documentação métodos utilizados===
+===2 - Documentação dos métodos utilizados===
 
 
 a. Demonstrar o jogo em tela
