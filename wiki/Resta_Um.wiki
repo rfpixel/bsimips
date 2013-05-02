@@ -72,6 +72,14 @@ vencedor, 1 quando o jogador ganhou e 0 quando perdeu.
 Passo a passo do jogo
 Um passo do jogo consiste na seleção de uma peça pelo jogador, no deslocamento desta e termina quando a peça é solta.
 
+==*RESULTADOS*==
+
+===Manual do usuário===
+
+Quando a janela de jogo se abre, o usuario pode começar a jogar selecionando uma peça com um clique e rastreando-a aonde quiser mantendo-se o botão esquerdo do mouse apertado. Uma vez a posição de destino atingida, é só liberar o botão do mouse. Se a jogada for impossível, a peça voltará ao seu lugar anterior. Caso contrário, ela ficará nesta posição e a peça pulada sumirá. 
+
+No fim do jogo aparecerá na janela como as possíveis mensagens: você ganhou ou você perdeu. 
+
 ===1 - Documentação da sequência do projeto===
 
 
@@ -92,13 +100,7 @@ b. Movimentar pedras
 
 c. Operação de retirada de pedras do tabuleiro ("Comer")
 
-==*RESULTADOS*==
 
-===Manual do usuário===
-
-Quando a janela de jogo se abre, o usuario pode começar a jogar selecionando uma peça com um clique e rastreando-a aonde quiser mantendo-se o botão esquerdo do mouse apertado. Uma vez a posição de destino atingida, é só liberar o botão do mouse. Se a jogada for impossível, a peça voltará ao seu lugar anterior. Caso contrário, ela ficará nesta posição e a peça pulada sumirá. 
-
-No fim do jogo aparecerá na janela como as possíveis mensagens: você ganhou ou você perdeu. 
 
 ==*CONCLUSÃO*==
 
