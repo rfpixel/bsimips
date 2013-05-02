@@ -15,6 +15,7 @@ Vanderli Gilson de Sousa 482765
 
 Vitor Alves de Andrade 435970
 
+
 ==*INTRODUÇÃO*==
 
 Como foi proposto na matéria de Arquitetura de Computadores um desenvolvimento de um jogo em Assembly, decidi-se pelo jogo resta-um, que é um jogo solitário cujo objetivo é conseguir deixar apenas uma peça no tabuleiro que comportavam inicialmente várias peças. 
@@ -23,67 +24,10 @@ Como todo jogo, há regras, as quais permitem que um peça no tabuleiro possa �
 
 <img src="https://bsimips.googlecode.com/svn/trunk/Resta um/resta1.png">
 
+
 ==Resta 1: como jogar==
 
 O objetivo é deixar apenas uma peça no tabuleiro. Para começar, coloque as 32 peças no jogo, deixando o espaço do centro vazio. Escolha uma peça para começar: ela deve “saltar” sobre outra peça, fazendo movimentos na horizontal ou vertical, para chegar ao espaço vazio. A peça que foi “comida” sai do jogo. Só vale comer uma peça por vez. O jogo acaba quando restar só uma peça (vitória!) ou não der mais para fazer movimentos – sinal de que você perdeu! 
-
-===CURIOSIDADES:===
-
-Você sabia que:
-
-•	O jogo de trilha é também chamado de moinho?
-
-•	Foram encontrados tabuleiros do jogo no Egito, datando de 1400 antes de Cristo, no Sri Lanka, do ano 10 depois de Cristo, e em um navio viking, do ano 900?
-
-•	Em Portugal, o jogo-da-velha é chamado de jogo-do-galo?
-
-•	No ano 500 antes de Cristo, os chineses se divertiam com o luk tsut k´i, um jogo igual ao jogo-da-velha?
-
-•	Tabuleiros de jogo-da-velha foram encontrados em antigas catedrais inglesas? No século 14, eram um ótimo passatempo para religiosos.
-
-•	Um jogo-da-velha foi achado em escavações no Egito? Ele tinha mais de 3 mil anos!
-
-===CURIOSIDADE 2===
-
-Gottfried von Leibniz, o filósofo e matemático alemão, numa carta de 1716, exaltava as virtudes de um passatempo que tem atravessado os séculos e, ainda hoje, continua despertando o interesse, tanto do jogador ocasional, disposto a matar meia-hora agradavelmente, quanto do estudioso, mais interessado em descobrir as leis que governam suas soluções. Seu nome é Solitaire (solitário), mas é muito mais conhecido no Brasil como Resta Um. Sua origem é um quebra-cabeça à parte, repleto de peças que não se encaixam bem. Uma das histórias não confirmadas, porém das mais difundidas, diz que ele foi inventado por um prisioneiro encarcerado numa solitária da Bastilha, como lenitivo para seu tédio.
-
-De uma coisa temos certeza: o tabuleiro utilizado no Solitaire é muito semelhante a outro usado em jogos mais antigos, como por exemplo o medieval Raposa e gansos e, com toda a probabilidade, evoluiu a partir dele.
-
-Seja como for, o século XVIII já assistia à sua extraordinária difusão pela Europa. Modernamente, distinguimos dois tabuleiros de Solitaire: o inglês e o francês. Este último apresenta, em relação ao primeiro, quatro casas a mais. O inglês, tradicionalmente, é trabalhado numa única peça circular de madeira, na qual se fazem 33 concavidades e um sulco ao longo da borda.
-
-Neste modelo, utilizam-se bolas de gude como peças e o sulco se destina à colocação das bolas capturadas. O modelo francês é usualmente composto de um quadrado perfurado, onde se introduzem pinos de madeira. Embora seja muito fácil encontrar no comércio jogos de Solitaire de variados tamanhos, aspectos e preços, bastará ao leitor o diagrama da mais 32 grãos de feijão para se iniciar nos mistérios desse passatempo, que Leibniz recomendava como boa forma de exercitar o raciocínio. Muitos problemas podem ser propostos sobre um tabuleiro de Solitaire, mas, infelizmente, as regras fornecidas nos jogos industrializados invariavelmente fazem referência a apenas um. Vamos a ele.
-
-O leitor deve colocar um feijão em cima de cada casa (pontos pretos), exceto a central. As peças se movem pulando as outras na horizontal e na vertical, nunca na diagonal. Para mover-se, uma peça deve pular outra que lhe seja adjacente, caindo numa casa vazia imediatamente seguinte. A peça que foi pulada é retirada do jogo. Se aquela que acabou de se mover puder fazer um novo pulo, o leitor pode prosseguir movendo-a numa sucessão de pulos (isso é considerado uma única jogada). Entretanto, não é obrigatório pular todas as peças disponíveis, podendo-se interromper a jogada após qualquer um dos pulos da seqüência. O objetivo do passatempo é deixar uma única peça sobre o tabuleiro.
-
-Os números inscritos nas casas servem para anotar as jogadas e registrar as soluções. Em quantas jogadas o leitor conseguirá resolver este primeiro problema? Depois de consegui-lo, tente repetir o feito, mas diminuindo o número de lances. O número mínimo de movimentos para a solução depende da casa em que se pretenda deixar a última peça. Em outras palavras, esse número tem relação direta com o par de casas que se escolha para iniciar e terminar o jogo.
-
-Isto nos leva a um segundo problema, mais específico: começar com a casa central vaga e terminar com o último pino também colocado nessa mesma casa. O leitor quer tentar? Saiba que o famoso inventor de quebra-cabeças inglês, Henry Ernest Dudeney, apresentou para este caso uma solução em dezenove lances, publicada em abril de 1908. Em seu comentário, ele afirmava não acreditar que essa marca pudesse ser melhorada. Todavia, doze anos mais tarde, Ernest Bergholt publicou o livro chamado The Game of Solitaire, onde apresentava uma solução em dezoito lances. Ela está à disposição do leitor aflito no armário de tranqüilizantes, isto é, na seção de soluções.
-
-Nada nos obriga a começar com a casa vazia no centro. Se deixarmos vaga, no início, a casa de número 11, ou a de número 30, é possível resolver o problema em apenas quinze lances, o que constitui, até onde estou informado, o recorde absoluto. E preciso alertar o leitor, contudo, para o fato de que nem todos os pares de casas que sejam escolhidos para início e término serão capazes de gerar uma solução. O livro de Bergholt propunha vários outros problemas para o Solitaire. Por exemplo, manter uma das peças "na espera", sem ser movida até o último lance, quando então ela captura uma ou mais peças e se torna a última sobrevivente.
-
-Ou, em outro desafio, manter uma peça congelada, sem se mexer até a última jogada, quando acaba sendo capturada. Ou ainda tentar concluir o passatempo com um espetacular salto múltiplo que, segundo ele, pode capturar até nove peças na última jogada - um autêntico salto mortal, para quem tiver pouca paciência. A seção de soluções tem uma providencial rede de segurança, mas apenas para um salto múltiplo de seis peças. Acrobacias maiores correm por conta e risco do leitor.
-
-
-===2 - Documentar a sequência do projeto===
-
-
-
-- *INÍCIO DO JOGO* : Tabuleiro na tela
-
-<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/imagem 1.png">
-
-- Movimento das pedras
-
-<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/teste2.png">
-
-===3 - Documentar métodos utilizados===
-
-
-a. Demonstrar o jogo em tela
-
-b. Movimentar pedras
-
-c. Operação de retirada de pedras do tabuleiro ("Comer")
 
 
 ==*OBJETIVO*==
@@ -127,7 +71,27 @@ vencedor, 1 quando o jogador ganhou e 0 quando perdeu.
  
 Passo a passo do jogo
 Um passo do jogo consiste na seleção de uma peça pelo jogador, no deslocamento desta e termina quando a peça é solta.
+
+===1 - Documentação a sequência do projeto===
+
+
+- *INÍCIO DO JOGO* : Tabuleiro na tela
+
+<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/imagem 1.png">
+
+- Movimento das pedras
+
+<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/teste2.png">
  
+===2 - Documentação métodos utilizados===
+
+
+a. Demonstrar o jogo em tela
+
+b. Movimentar pedras
+
+c. Operação de retirada de pedras do tabuleiro ("Comer")
+
 ==*RESULTADOS*==
 
 ===Manual do usuário===
@@ -139,6 +103,27 @@ No fim do jogo aparecerá na janela como as possíveis mensagens: você ganhou o
 ==*CONCLUSÃO*==
 
 Este trabalho permitiu aplicar os conhecimentos teóricos da matéria Arquiterura de computado, sendo que o projeto de um jogo interativo obrigou os componentes do grupo a estudar mais detalhadamente a linguegem assembly.
+
+==CURIOSIDADES==
+
+Gottfried von Leibniz, o filósofo e matemático alemão, numa carta de 1716, exaltava as virtudes de um passatempo que tem atravessado os séculos e, ainda hoje, continua despertando o interesse, tanto do jogador ocasional, disposto a matar meia-hora agradavelmente, quanto do estudioso, mais interessado em descobrir as leis que governam suas soluções. Seu nome é Solitaire (solitário), mas é muito mais conhecido no Brasil como Resta Um. Sua origem é um quebra-cabeça à parte, repleto de peças que não se encaixam bem. Uma das histórias não confirmadas, porém das mais difundidas, diz que ele foi inventado por um prisioneiro encarcerado numa solitária da Bastilha, como lenitivo para seu tédio.
+
+De uma coisa temos certeza: o tabuleiro utilizado no Solitaire é muito semelhante a outro usado em jogos mais antigos, como por exemplo o medieval Raposa e gansos e, com toda a probabilidade, evoluiu a partir dele.
+
+Seja como for, o século XVIII já assistia à sua extraordinária difusão pela Europa. Modernamente, distinguimos dois tabuleiros de Solitaire: o inglês e o francês. Este último apresenta, em relação ao primeiro, quatro casas a mais. O inglês, tradicionalmente, é trabalhado numa única peça circular de madeira, na qual se fazem 33 concavidades e um sulco ao longo da borda.
+
+Neste modelo, utilizam-se bolas de gude como peças e o sulco se destina à colocação das bolas capturadas. O modelo francês é usualmente composto de um quadrado perfurado, onde se introduzem pinos de madeira. Embora seja muito fácil encontrar no comércio jogos de Solitaire de variados tamanhos, aspectos e preços, bastará ao leitor o diagrama da mais 32 grãos de feijão para se iniciar nos mistérios desse passatempo, que Leibniz recomendava como boa forma de exercitar o raciocínio. Muitos problemas podem ser propostos sobre um tabuleiro de Solitaire, mas, infelizmente, as regras fornecidas nos jogos industrializados invariavelmente fazem referência a apenas um. Vamos a ele.
+
+O leitor deve colocar um feijão em cima de cada casa (pontos pretos), exceto a central. As peças se movem pulando as outras na horizontal e na vertical, nunca na diagonal. Para mover-se, uma peça deve pular outra que lhe seja adjacente, caindo numa casa vazia imediatamente seguinte. A peça que foi pulada é retirada do jogo. Se aquela que acabou de se mover puder fazer um novo pulo, o leitor pode prosseguir movendo-a numa sucessão de pulos (isso é considerado uma única jogada). Entretanto, não é obrigatório pular todas as peças disponíveis, podendo-se interromper a jogada após qualquer um dos pulos da seqüência. O objetivo do passatempo é deixar uma única peça sobre o tabuleiro.
+
+Os números inscritos nas casas servem para anotar as jogadas e registrar as soluções. Em quantas jogadas o leitor conseguirá resolver este primeiro problema? Depois de consegui-lo, tente repetir o feito, mas diminuindo o número de lances. O número mínimo de movimentos para a solução depende da casa em que se pretenda deixar a última peça. Em outras palavras, esse número tem relação direta com o par de casas que se escolha para iniciar e terminar o jogo.
+
+Isto nos leva a um segundo problema, mais específico: começar com a casa central vaga e terminar com o último pino também colocado nessa mesma casa. O leitor quer tentar? Saiba que o famoso inventor de quebra-cabeças inglês, Henry Ernest Dudeney, apresentou para este caso uma solução em dezenove lances, publicada em abril de 1908. Em seu comentário, ele afirmava não acreditar que essa marca pudesse ser melhorada. Todavia, doze anos mais tarde, Ernest Bergholt publicou o livro chamado The Game of Solitaire, onde apresentava uma solução em dezoito lances. Ela está à disposição do leitor aflito no armário de tranqüilizantes, isto é, na seção de soluções.
+
+Nada nos obriga a começar com a casa vazia no centro. Se deixarmos vaga, no início, a casa de número 11, ou a de número 30, é possível resolver o problema em apenas quinze lances, o que constitui, até onde estou informado, o recorde absoluto. E preciso alertar o leitor, contudo, para o fato de que nem todos os pares de casas que sejam escolhidos para início e término serão capazes de gerar uma solução. O livro de Bergholt propunha vários outros problemas para o Solitaire. Por exemplo, manter uma das peças "na espera", sem ser movida até o último lance, quando então ela captura uma ou mais peças e se torna a última sobrevivente.
+
+Ou, em outro desafio, manter uma peça congelada, sem se mexer até a última jogada, quando acaba sendo capturada. Ou ainda tentar concluir o passatempo com um espetacular salto múltiplo que, segundo ele, pode capturar até nove peças na última jogada - um autêntico salto mortal, para quem tiver pouca paciência. A seção de soluções tem uma providencial rede de segurança, mas apenas para um salto múltiplo de seis peças. Acrobacias maiores correm por conta e risco do leitor.
+
 
 ==*REFERÊNCIAS*==
 
