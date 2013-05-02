@@ -17,14 +17,11 @@ Vitor Alves de Andrade 435970
 
 ==*INTRODUÇÃO*==
 
-<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/resta1.png">
-
-
-
 Como foi proposto na matéria de Arquitetura de Computadores um desenvolvimento de um jogo em Assembly, decidi-se pelo jogo resta-um, que é um jogo solitário cujo objetivo é conseguir deixar apenas uma peça no tabuleiro que comportavam inicialmente várias peças. 
 
 Como todo jogo, há regras, as quais permitem que um peça no tabuleiro possa “eliminar” outra peça em posição adjacente horizontal ou verticalmente aquela, sendo que a posição alcançada é a posição vizinha da peça eliminada.
 
+<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/resta1.png">
 
 ==Resta 1: como jogar==
 
