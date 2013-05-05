@@ -89,7 +89,7 @@ No fim do jogo aparecerá na janela como as possíveis mensagens: você ganhou o
 
 - Movimento das pedras
 
-<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/teste2.png">
+<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/mov pedras.png">
 
 - Movimentos inválidos
 
