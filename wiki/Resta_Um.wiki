@@ -22,7 +22,7 @@ Como foi proposto na matéria de Arquitetura de Computadores um desenvolvimento 
 
 Como todo jogo, há regras, as quais permitem que um peça no tabuleiro possa “eliminar” outra peça em posição adjacente horizontal ou verticalmente aquela, sendo que a posição alcançada é a posição vizinha da peça eliminada.
 
-<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/resta1.png">
+<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/Imagens/resta1.png">
 
 
 ==Resta 1: como jogar==
@@ -44,7 +44,7 @@ Nesse jogo, a única jogada possível consiste em: dadas três casas consecutiva
 
 Na Figura 2, vê-se a casa A vazia e as casas B e C ocupadas. A peça que está em C pula a que está em B e passa a ocupar a casa A. A peça da casa B, que foi pulada, é retirada do jogo (Figura 3).
 
-<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/figura1.png">
+<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/Imagens/figura1.png">
 
 
 Para eliminar uma bolinha, você precisa "pular" sobre ela, como no jogo de Damas. Para fazer isso, clique sobre a bolinha que vai pular outra que tenha uma casa vazia ao lado. 
@@ -85,15 +85,15 @@ No fim do jogo aparecerá na janela como as possíveis mensagens: você ganhou o
 
 - *INÍCIO DO JOGO* : Tabuleiro na tela
 
-<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/imagem 1.png">
+<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/Imagens/imagem 1.png">
 
 - Movimento das pedras
 
-<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/mov pedras.png">
+<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/Imagens/mov pedras.png">
 
 - Movimentos inválidos
 
-<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/mensagem jogada inválida.png">
+<img src="https://bsimips.googlecode.com/svn/trunk/Resta um/Imagens/mensagem jogada inválida.png">
  
 ===2 - Documentação dos métodos utilizados===
 
