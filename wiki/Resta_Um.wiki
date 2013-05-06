@@ -98,11 +98,106 @@ No fim do jogo aparecerá na janela como as possíveis mensagens: você ganhou o
 ===2 - Documentação dos métodos utilizados===
 
 
-a. Demonstrar o jogo em tela
+*a. Demonstrar o jogo em tela*
 
-b. Movimentar pedras
+# macro para imprimir o jogo na tela
 
-c. Operação de retirada de pedras do tabuleiro ("Comer")
+.macro print(%pl)
+
+la $t0, %pl
+
+la $a0, ($t0)
+
+li $v0, 4
+
+syscall
+
+
+la $a0, 4($t0)
+
+li $v0, 4
+
+syscall
+
+
+la $a0, 8($t0)
+
+li $v0, 4
+
+syscall
+
+
+la $a0, 12($t0)
+
+li $v0, 4
+
+syscall
+
+
+la $a0, 16($t0)
+
+li $v0, 4
+
+syscall
+
+
+la $a0, 20($t0)
+
+li $v0, 4
+
+syscall
+
+
+la $a0, 24($t0)
+
+li $v0, 4
+
+syscall
+
+
+.end_macro
+
+
+*b. Movimentar pedras*
+
+imprimeLinha
+
+li $v0, 5 # Macro para solicitar ao usuário a linha que deseja consultar
+
+syscall
+
+sw $v0, teclin
+
+
+imprimeColuna
+
+li $v0, 5
+
+syscall # Macro para solicitar ao usuário a coluna que deseja consultar
+
+sw $v0, teccol
+
+
+impLinha
+
+li $v0, 5 # Macro para solicitar ao usuário a linha que deseja consultar
+
+syscall
+
+sw $v0, tlin
+
+
+impColuna
+
+li $v0, 5
+
+syscall # Macro para solicitar ao usuário a coluna que deseja consultar
+
+sw $v0, tcol
+
+
+*c. Operação de retirada de pedras do tabuleiro ("Comer")*
+
 
 
 
