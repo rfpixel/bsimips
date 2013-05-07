@@ -11,30 +11,60 @@ Dado um número  escolhido aleatoriamente,  formado por quatro algarismos de 0 a
 = Código =
 
 <code language="asm">
-# Esboco do jogo Bulls and Cows.
+# Esboco do jogo Bulls and Cows. 
 # Bull: Digito certo no local certo. Cow: Digito certo no local errado.
 # Cada registrador de $s0 a $s3 contera um digito da senha secreta, sendo $s0 o digito mais significativo
 # Cada registrador de $s4 a $s7 contera um digito do palpite, sendo $s4 o digito mais significativo
 # Registradores $t*, conterao valores temporarios usados no processamento
 # Registradores $a* e $v* serao utilizados na troca de informacoes nas syscalls e nos procedimentos
 
+
+#INTERFACE GRÁFICA
+# A utilização do bitmap display para o jogo Bulls and Cows será feita utilizando o endereço do ponteiro global para enviar informações.
+# Para configurar o ambiente utilize 16 unit pixels para Largura e Altura, configure o bitmap display para 256 largura x 512 altura.
+# Altere o base address for display para 0x10008000 ($gp)
+# Conecte com o MIPS e execute o programa
+# Cada linha tem 64 de tamanho, sendo que cada "pixel" tem 4 de tamanho, então são 16 "pixeis" utilizáveis por linha
+# Serão utilizados os registradores $s6 e $s7 para cor de fundo e cor mutável duranto o jogo (Como esses registradores serão utilizados durante o jogo para armazenar os dados da senha mudarei o da cor mutável para t5)
+# Para manipular a localização no display serão utilizados os registradores a0...a3 na inicialização da tela e durante o jogo somente os registradores a2 e a3
+
 .data
-    explicacao: .asciiz "Objetivo: Descobrir uma senha de 4 digitos.\nBull: Digito certo na posicao certa.\nCow: Digito certo na posicao errada.\n\n"
-    pedirTentativa: .asciiz "\nConsiderando os digitos de 1 a 6, digite uma sequencia de 4 deles, sem repeti-los (Ex: 3256): "
-    qtdeBulls: .asciiz "Bulls: "
-    qtdeCows: .asciiz ",  Cows: "
-    venceu: .asciiz "Parabens, voce venceu!"
+	explicacao: .asciiz "Objetivo: Descobrir uma senha de 4 digitos.\nBull: Digito certo na posicao certa.\nCow: Digito certo na posicao errada.\n\n"
+	pedirTentativa: .asciiz "\nConsiderando os digitos de 1 a 6, digite uma sequencia de 4 deles, sem repeti-los (Ex: 3256): "
+	qtdeBulls: .asciiz "Bulls: "
+	qtdeCows: .asciiz ",  Cows: "
+	venceu: .asciiz "Parabens, voce venceu!"
+	placar: .asciiz "Pontuacao: "
+	falhou: .asciiz "O máximo de tentativas é de 11 rodadas."
+	
+
+	Largura:		.half 16			# Armazena a altura e largura da tela para colorir
+	Altura:			.half 32			# Utiliza o global pointer ($gp) do bitmap display com a configuração 256x512 com 8 unidades cada pixel
+		
+	CorPrincipal:		.word 0x00000000		# Cor para titulo e bordas - preto
+	Cor1:			.word 0x00AA0000		# Cor 1 - vermelho
+	Cor2:			.word 0x00FFEF00		# Cor 2 - amarelo
+	Cor3:			.word 0x000000FF		# Cor 3 - azul
+	Cor4:			.word 0x0000AA00		# Cor 4 - verde
+	Cor5:			.word 0x0000FFFF		# Cor 5 - azul claro
+	Cor6:			.word 0x00FF8900		# Cor 6 - laranja
+	Fundo:			.word 0xFFC2C2C2		# Cor do fundo da tela - cinza
 
 .text
 
 main:
-    # Apresenta a explicacao do jogo.
-    la $a0, explicacao   	 # Salva o endereco da string em $a0, para impressao
-    li $v0, 4   		 # Salva o valor 4 em $v0, indicando impressao de uma string
-    syscall   			 # Imprime a string na tela
-    
-    # Gera a senha secreta
-    jal geraSenha   		 # Salva 4 digitos (de 1 a 6) aleatorios em $s0-$s3
+	# inicialização dos gráficos antes de iniciar o jogo
+	# Carrega Cores Iniciais
+	lw $s6, CorPrincipal		# Armazena cor de desenho principal em s6
+	lw $s7, Fundo			# Armazena cor do fundo em s7
+	# Pinta o Fundo
+	jal Preencher
+	nop
+	jal Bordas			# Desenhar Bordas
+	nop
+	jal Finalizar_tela
+	nop
+	# Fim da inicialização gráfica da tela, jogo inicia a partir daqui, registradores usados na inicialização da tela e no jogo estão agora livres para o jogo
 </code>
 
 
