@@ -4,7 +4,7 @@ Página do jogo Bulls'n'Cows, criado por alunos do Bacharelado em Sistemas de In
 
 *1. O jogo*
 
-Dado um número  escolhido aleatoriamente,  formado por quatro algarismos de 0 a 6, o jogador tem que advinhar os algarismos, inclusive sua sequência, que formam este número.  Este jogo lê o número de quatro dígitos digitado pelo usuário, retorna acertos “cows” (dígito certo na posição errada) e acertos “bulls” (dígito certo na posição certa), mantedo o histórico de tentativas do usuário na tela. Ao acertar o número secreto o jogador é declarado vencedor.
+Dado um número  escolhido aleatoriamente,  formado por quatro algarismos de 1 a 6, o jogador tem que advinhar os algarismos, inclusive sua sequência, que formam este número.  Este jogo lê o número de quatro dígitos digitado pelo usuário, retorna acertos “cows” (dígito certo na posição errada) e acertos “bulls” (dígito certo na posição certa), mantedo o histórico de tentativas do usuário na tela. Ao acertar o número secreto o jogador é declarado vencedor.
 
  De acordo com referências na Wikipedia este é um jogo secular que se jogava usando lápis e papel. Precursor do hoje conhecido como “senha” (ou “mastermind”), há referências de que foi implementado pela primeira vez para o computador na década de 1970.
 
@@ -117,7 +117,7 @@ $a** e $v**: utilizados na troca de informações nas syscalls e nos procediment
 
 Procedimentos:
 
-geraSenha: gera a senha secreta - número de quatro dígitos (de 0 até 6);
+geraSenha: gera a senha secreta - número de quatro dígitos (de 1 até 6);
 tentativa: executa a leitura de cada tentativa do usuário, copiando o endereço do inteiro lido;
 leTentativa: faz a leitura do número digitado pelo usuário;
 distDigitos: distribui cada dígito para um registrador;
@@ -128,4 +128,4 @@ fimPrograma: finaliza o programa.
 
 *5. Conclusão*
 
-Como foi possível perceber o trabalho ainda está em desenvolvimento, porém, muito já foi alcançado - temos uma solução funcionando. Esperamos melhorar o código buscando meios de diminuir o número de interações, inserir os mecanismos de pontuação e recursos gráficos.
+A experiência com o desenvolvimento deste jogo foi bastante construtiva,  especialmente os testes e o melhoramento de seu código, além do interfaceamento da lógica do jogo com sua parte gráfica.
