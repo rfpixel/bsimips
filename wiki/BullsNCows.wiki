@@ -4,7 +4,7 @@ Página do jogo Bulls'n'Cows, criado por alunos do Bacharelado em Sistemas de In
 
 *1. O jogo*
 
-Dado um número  escolhido aleatoriamente,  formado por quatro algarismos de 1 a 6, o jogador tem que advinhar os algarismos, inclusive sua sequência, que formam este número.  Este jogo lê o número de quatro dígitos digitado pelo usuário, retorna acertos “cows” (dígito certo na posição errada) e acertos “bulls” (dígito certo na posição certa), mantedo o histórico de tentativas do usuário na tela. Ao acertar o número secreto o jogador é declarado vencedor.
+Dado um número  escolhido aleatoriamente,  formado por quatro algarismos de 1 a 6, o jogador tem que advinhar os algarismos, inclusive sua sequência, que formam este número.  Este jogo lê o número de quatro dígitos digitado pelo usuário, retorna acertos “cows” (dígito certo na posição errada) e acertos “bulls” (dígito certo na posição certa), mantendo o histórico de tentativas do usuário na tela. Ao acertar o número secreto o jogador é declarado vencedor.
 
  De acordo com referências na Wikipedia este é um jogo secular que se jogava usando lápis e papel. Precursor do hoje conhecido como “senha” (ou “mastermind”), há referências de que foi implementado pela primeira vez para o computador na década de 1970.
 
@@ -85,23 +85,36 @@ A proposta de criarmos um jogo nos fez remeter à ideia de aperfeiçoarmos a cap
 
 Programar em linguagem de baixo nível, ou linguagem de máquina, se distancia da linguagem natural. A linguagem de programação que um computador é capaz de compreender é composta apenas de números. Portanto, quando fazemos um algoritmo na linguagem de programação do computador ou em sua linguagem de máquina é um processo extremamente complicado. Para facilitar a programação de computadores, foi necessária a criação de um código que relacionasse a linguagem de máquina a uma linguagem mais fácil de ser compreendida. 
 
-Usar Assembly é utilizar a linguagem de montagem, é um código que tem uma instrução alfanumérica (ou mnemônica) para cada instrução numérica em linguagem de máquina. (MEDINA, FERTIG, 2006). Conhecer as regras do jogo, conseguir entender seu funcionamento, conseguir traduzir da linguagem natural para linguagem de máquinas, foi a estratégia para conseguirmos elaborar algoritmo, linguagem de alto nível e depois traduzir para linguagem de baixo nível.
+Usar Assembly é utilizar a linguagem de montagem, é um código que tem uma instrução alfanumérica (ou mnemônica) para cada instrução numérica em linguagem de máquina. (MEDINA, FERTIG, 2006). Conhecer as regras do jogo, conseguir entender seu funcionamento, conseguir traduzir da linguagem natural para linguagem de máquinas, foi a estratégia para conseguirmos elaborar o algoritmo, linguagem de alto nível e depois traduzir para linguagem de baixo nível.
 
-Algoritmo:
+Algoritmo
+
 Algoritmo_Jogo Senha
+
 Variáveis: inteiro i, geraSenha, letentativa, distDigitos, compara, tentativa, qtdeBulls, qtdeCowns
+
 Inicio
+
 Escreva: "Objetivo: Descobrir uma senha de 4 digitos. Bull: Digito certo na posicao certa. Cow: Digito certo na posicao errada.”
+
 Escreva: "Considerando os digitos de 1 a 6, digite uma sequencia de 4 deles, sem repeti-los (Ex: 3256): "
+
 Aleatório geraSenha();
+
 Ler: lerTentativa;
+
 lerTentativa = distDigitos;
+
 Se compara = = lerTentativa;
+
 Escreva: "Parabens, voce venceu!"
+
 Senão
+
 Para (tentativa = 0; tentativa < 10; tentativa++) 
 	Escreva “ A quantidade de cows eh: “, qtdeCowns;
  	Escreva “ A quantidade de bulls eh: “, qtdeBulls;
+
 Fim-algoritmo
 
 
