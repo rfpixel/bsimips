@@ -24,7 +24,7 @@ Dado um número  escolhido aleatoriamente,  formado por quatro algarismos de 1 a
 # Altere o base address for display para 0x10008000 ($gp)
 # Conecte com o MIPS e execute o programa
 # Cada linha tem 64 de tamanho, sendo que cada "pixel" tem 4 de tamanho, então são 16 "pixeis" utilizáveis por linha
-# Serão utilizados os registradores $s6 e $s7 para cor de fundo e cor mutável durante o jogo (Como esses registradores serão utilizados durante o jogo para armazenar os dados da senha o da cor mutável deve ser alterado para t5)
+# Serão utilizados os registradores $s6 e $s7 para cor de fundo e cor mutável duranto o jogo (Como esses registradores serão utilizados durante o jogo para armazenar os dados da senha mudarei o da cor mutável para t5)
 # Para manipular a localização no display serão utilizados os registradores a0...a3 na inicialização da tela e durante o jogo somente os registradores a2 e a3
 
 .data
@@ -33,7 +33,7 @@ Dado um número  escolhido aleatoriamente,  formado por quatro algarismos de 1 a
 	qtdeBulls: .asciiz "Bulls: "
 	qtdeCows: .asciiz ",  Cows: "
 	venceu: .asciiz "Parabens, voce venceu!"
-	placar: .asciiz "Pontuacao: "
+	placar: .asciiz " Pontuacao: "
 	falhou: .asciiz "O máximo de tentativas é de 11 rodadas."
 	
 
